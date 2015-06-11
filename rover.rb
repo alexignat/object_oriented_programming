@@ -13,11 +13,11 @@ class Rover
   end
 
   def read_instruction(command)
-    if command = "R"
+    if command == "R"
       turn_right
-    elsif command = "L"
+    elsif command == "L"
       turn_left
-    elsif command = "M"
+    elsif command == "M"
       move
     end
   end
@@ -56,7 +56,12 @@ end
 
 # Figure out a way to get info and then pass the methods onto it
 
+def get_instructins
+  instructions = gets.chomp
 
+  instructions.each_char { |x| puts x}
+
+end
 
 
 # Create the rover class
