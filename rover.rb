@@ -65,22 +65,32 @@ end
 
 
 # Create the rover class
-r = Rover.new(2, 2, "N")
 
-# r.read_instruction("R")
-# puts r
+puts "This is the starting position of the rover:"
 
-# r.turn_left
-# puts r
+rover_1 = Rover.new(2, 2, "N")
+puts rover_1
 
-# r.move
-# puts r
+puts "Turn rover right:"
 
-print "instructions> "
-instructions = gets.chomp
+rover_1.read_instruction("R")
+puts rover_1
 
-instructions.each_char do |x|
-  puts x
-  r.read_instruction(x)
-  puts r
-end
+puts "Turn rover left:"
+
+rover_1.turn_left
+puts rover_1
+
+puts "Move the rover:"
+
+rover_1.move
+puts rover_1
+
+# print "instructions> "
+# instructions = gets.chomp
+
+# instructions.each_char do |x|
+#   puts x
+#   rover_1.read_instruction(x)
+#   puts rover_1
+# end
