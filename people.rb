@@ -2,6 +2,13 @@
 # Ruby Object Oriented Programming
 # Exercise 1
 
+class Person
+  def initialize(name)
+    @name = name
+  end
+end
+
+
 class Student
   def learn
     "I get it!"
