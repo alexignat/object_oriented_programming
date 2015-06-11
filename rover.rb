@@ -35,17 +35,20 @@ class Rover
   # The grid is a set of numbers, so if you want it to move
   # up, down, left or right it will execute those instructions by incrementing the x and y coordinates
 
-def move
-    if @compass[@facing] == "N"
+  def dir
+    @compass[@facing]
+  end
+
+  def move
+    if dir == "N"
       @y += 1
-    elsif @compass[@facing] == "S"
+    elsif dir == "S"
       @y -= 1
-    elsif @compass[@facing] == "E"
+    elsif dir == "E"
       @x += 1
-    elsif @compass[@facing]== "W"
+    elsif dir== "W"
       @x -= 1
     end
-
   end
 
   def to_s
@@ -56,23 +59,28 @@ end
 
 # Figure out a way to get info and then pass the methods onto it
 
-def get_instructins
-  instructions = gets.chomp
 
-  instructions.each_char { |x| puts x}
 
-end
+
 
 
 # Create the rover class
-
 r = Rover.new(2, 2, "N")
 
-r.turn_right
-puts r.to_s
+# r.read_instruction("R")
+# puts r
 
-r.turn_left
-puts r.to_s
+# r.turn_left
+# puts r
 
-r.move
-puts r.to_s
+# r.move
+# puts r
+
+print "instructions> "
+instructions = gets.chomp
+
+instructions.each_char do |x|
+  puts x
+  r.read_instruction(x)
+  puts r
+end
