@@ -37,7 +37,7 @@ class RegularItem
   end
 
   def sales_tax
-    item_with_sales_tax = @price + (@price * 0.10)
+    @item_with_sales_tax = @price + (@price * 0.10)
   end
 
 end
