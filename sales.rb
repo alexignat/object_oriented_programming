@@ -35,6 +35,7 @@ class SalesTax
 end
 
 perfume = SalesTax.new(perfume, 47.50)
+puts perfume.sales_tax
 
 # Imported item class
 # Is able to take an item, and find its final sale price with the improt tax
@@ -44,13 +45,13 @@ class Imported < SalesTax
 
   attr_accessor :item, :price
 
-  def initialize(item, price)
-    @item = item
-    @price = price
-  end
+  # def initialize(item, price)
+  #   @item = item
+  #   @price = price
+  # end
 
   def import_tax
-    item_with__import_tax = @price + (@price * 0.15)
+    item_with__import_tax = @price + (@price * 0.05)
   end
 end
 
