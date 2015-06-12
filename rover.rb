@@ -71,16 +71,19 @@ puts "This is the starting position of the rover:"
 rover_1 = Rover.new(1, 2, "N")
 puts "Rover 1: #{rover_1}"
 
-# rover_2 = Rover.new(3, 3, "E")
-# puts "Rover 2: #{rover_2}"
+rover_2 = Rover.new(3, 3, "E")
+puts "Rover 2: #{rover_2}"
 
-puts "---------------\nIt's time to give the rover some instructions.\nPlease enter some commands:"
+puts "---------------\nIt's time to give the rover 1 some instructions.\nPlease enter a set of commands: "
 
 instructions = gets.chomp.upcase
 rover_1.take_command(instructions)
 puts rover_1
 
-
+puts "---------------\nIt's time to give the rover 2 some instructions.\nPlease enter a set of commands: "
+instructions = gets.chomp.upcase
+rover_2.take_command(instructions)
+puts rover_2
 
 
 
