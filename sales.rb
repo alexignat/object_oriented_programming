@@ -1,28 +1,21 @@
 # Object Oriented Programming
 # Assingment 4 Exercise 3
 
+class TaxExempt
+  attr_accessor :item, :price
 
-# This class is tax exempt
-# It includes books, food, and medicine
+  def initialize(item, price)
+    @item = item
+    @price = price
+  end
 
-# class Tax_exempt
+  def tax
+    tax = (@price * 0)
+  end
+end
 
-#   def initialize(item, price)
-#     @item = item
-#     @price = price
-#   end
-
-#   def to_s
-#     puts "#{@item}: #{@price}"
-#   end
-
-# end
-
-# book = Tax_exempt.new(book, 12.49)
-# chocolate_bar = Tax_exempt.new(chocolate_bar, 0.85)
-# headache_pills = Tax_exempt.new(headache_pills, 9.75)
-
-# book.to_s
+book = TaxExempt.new(book, 10)
+puts book.tax
 
 # RegularItem class has a tax amount of 10%
 # The class calculates the tax rate
