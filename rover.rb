@@ -3,11 +3,12 @@
 class Rover
 
   #We only need attr_reader b/c we we just need to read commands, not change them
-  attr_reader :x, :y, :direction
+  attr_reader :x, :y, :direction, :name
 
-  def initialize(x, y, direction) # direction ="N"
+  def initialize(x, y, direction, name) # direction ="N"
     @x = x
     @y = y
+    @name = name
     @compass = ["N", "E", "S", "W"]
     @facing = @compass.index(direction)
   end
@@ -61,6 +62,12 @@ class Rover
     "#{@x}, #{@y}, Facing #{@compass[@facing]}" #What exactly does this do?
   end
 
+  def take_action
+    puts "---------------\nIt's time to give #{name} some instructions.\nPlease enter a set of commands: "
+    instructions = gets.chomp.upcase
+    take_command(instructions)
+    puts "The new coordinates of #{name} are #{to_s}: "
+  end
 
 end
 
@@ -68,22 +75,18 @@ end
 
 puts "This is the starting position of the rover:"
 
-rover_1 = Rover.new(1, 2, "N")
+rover_1 = Rover.new(1, 2, "N", "Rover 1")
 puts "Rover 1: #{rover_1}"
 
-rover_2 = Rover.new(3, 3, "E")
+rover_2 = Rover.new(3, 3, "E", "Rover 2")
 puts "Rover 2: #{rover_2}"
 
-puts "---------------\nIt's time to give the rover 1 some instructions.\nPlease enter a set of commands: "
+rover_1.take_action
+rover_2.take_action
 
-instructions = gets.chomp.upcase
-rover_1.take_command(instructions)
-puts "The new coordinates of rover 1 are: #{rover_1}"
 
-puts "---------------\nIt's time to give the rover 2 some instructions.\nPlease enter a set of commands: "
-instructions = gets.chomp.upcase
-rover_2.take_command(instructions)
-puts "The new coordinates of rover 2 are: #{rover_2}"
+
+
 
 
 
