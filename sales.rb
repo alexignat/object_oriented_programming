@@ -1,25 +1,33 @@
-# Input 1:
-# 1 book at 12.49
-# 1 music CD at 14.99
-# 1 chocolate bar at 0.85
+# Object Oriented Programming
+# Assingment 4 Exercise 3
 
-# Input 2:
-# 1 imported box of chocolates at 10.00
-# 1 imported bottle of perfume at 47.50
 
-# Input 3:
-# 1 imported bottle of perfume at 27.99
-# 1 bottle of perfume at 18.99
-# 1 packet of headache pills at 9.75
-# 1 box of imported chocolates at 11.25
+# This class is tax exempt
+# It includes books, food, and medicine
 
 class Tax_exempt
+
+  def initialize(item, price)
+    @item = item
+    @price = price
+  end
+
+  def to_s
+    puts "#{@item}: #{@price}"
+  end
+
 end
 
+book = Tax_exempt.new(book, 12.49)
+chocolate_bar = Tax_exempt.new(chocolate_bar, 0.85)
+headache_pills = Tax_exempt.new(headache_pills, 9.75)
+
+book.to_s
 
 # Create a SalesTax class that can be the parent of the Imported class
+# The class adds a sales tax of 10%
 
-class SalesTax
+class RegularItem
 
   attr_accessor :item, :price
 
@@ -34,14 +42,13 @@ class SalesTax
 
 end
 
-perfume = SalesTax.new(perfume, 47.50)
+perfume = RegularItem.new(perfume, 47.50)
 puts perfume.sales_tax
 
 # Imported item class
-# Is able to take an item, and find its final sale price with the improt tax
 # Inherit the sales tax from SalesTax class
 
-class Imported < SalesTax
+class Imported < RegularItem
 
   attr_accessor :item, :price
 
