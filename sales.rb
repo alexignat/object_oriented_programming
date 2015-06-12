@@ -16,10 +16,10 @@
 class Tax_exempt
 end
 
-# Imported item class
-# Is able to take an item, and find its final sale price with the improt tax
 
-class Imported
+# Create a SalesTax class that can be the parent of the Imported class
+
+class SalesTax
 
   attr_accessor :item, :price
 
@@ -28,21 +28,37 @@ class Imported
     @price = price
   end
 
-  # def get_product_info
-  #   puts "What is the item?"
-  #   @item = gets.chomp
-  #   puts "What is the price?"
-  #   @price = gets.chomp.to_i
-  # end
+  def sales_tax
+    item_with_sales_tax = @price + (@price * 0.10)
+  end
 
+end
+
+perfume = SalesTax.new(perfume, 47.50)
+
+# Imported item class
+# Is able to take an item, and find its final sale price with the improt tax
+# Inherit the sales tax from SalesTax class
+
+class Imported < SalesTax
+
+  attr_accessor :item, :price
+
+  def initialize(item, price)
+    @item = item
+    @price = price
+  end
 
   def import_tax
-    item_with_tax = @price + (@price * 0.15)
+    item_with__import_tax = @price + (@price * 0.15)
   end
 end
 
 
-perfume = Imported.new(perfume, 12.00)
+perfume = Imported.new(perfume, 47.50)
 puts perfume.import_tax
+
+
+
 
 
