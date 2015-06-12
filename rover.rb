@@ -52,7 +52,7 @@ class Rover
   end
 
   def to_s
-    "Coordinates: #{@x}, #{@y}, Facing #{@compass[@facing]}"
+    "Coordinates: #{@x}, #{@y}, Facing #{@compass[@facing]}" #What exactly does this do?
   end
 
 end
@@ -86,11 +86,24 @@ puts "Move the rover:"
 rover_1.move
 puts rover_1
 
-# print "instructions> "
-# instructions = gets.chomp
+puts "---------------"
 
-# instructions.each_char do |x|
-#   puts x
-#   rover_1.read_instruction(x)
-#   puts rover_1
-# end
+
+
+
+
+instructions = gets.chomp
+
+instructions.each_char do |x|
+  puts x
+  rover_1.read_instruction(x)
+  puts rover_1
+end
+
+
+
+
+
+
+
+
