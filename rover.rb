@@ -58,7 +58,7 @@ class Rover
   end
 
   def to_s
-    "Coordinates: #{@x}, #{@y}, Facing #{@compass[@facing]}" #What exactly does this do?
+    "#{@x}, #{@y}, Facing #{@compass[@facing]}" #What exactly does this do?
   end
 
 
@@ -78,12 +78,12 @@ puts "---------------\nIt's time to give the rover 1 some instructions.\nPlease 
 
 instructions = gets.chomp.upcase
 rover_1.take_command(instructions)
-puts rover_1
+puts "The new coordinates of rover 1 are: #{rover_1}"
 
 puts "---------------\nIt's time to give the rover 2 some instructions.\nPlease enter a set of commands: "
 instructions = gets.chomp.upcase
 rover_2.take_command(instructions)
-puts rover_2
+puts "The new coordinates of rover 2 are: #{rover_2}"
 
 
 
