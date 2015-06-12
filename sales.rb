@@ -1,6 +1,8 @@
 # Object Oriented Programming
 # Assingment 4 Exercise 3
 
+
+# This class is tax exempt
 class TaxExempt
   attr_accessor :item, :price
 
@@ -60,8 +62,6 @@ puts chocolate_bar.tax
 
 
 
-# perfume = Imported.new(perfume, 47.50)
-# puts perfume.import_tax
 
 
 
