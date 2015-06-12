@@ -12,6 +12,12 @@ class Rover
     @facing = @compass.index(direction)
   end
 
+  def take_command(instructions)
+    instructions.each_char do |x|
+      read_instruction(x)
+    end
+  end
+
   def read_instruction(command)
     if command == "R"
       turn_right
@@ -55,50 +61,64 @@ class Rover
     "Coordinates: #{@x}, #{@y}, Facing #{@compass[@facing]}" #What exactly does this do?
   end
 
+
 end
-
-# Figure out a way to get info and then pass the methods onto it
-
-
-
-
-
 
 # Create the rover class
 
 puts "This is the starting position of the rover:"
 
-rover_1 = Rover.new(2, 2, "N")
+rover_1 = Rover.new(1, 2, "N")
+puts "Rover 1: #{rover_1}"
+
+# rover_2 = Rover.new(3, 3, "E")
+# puts "Rover 2: #{rover_2}"
+
+puts "---------------\nIt's time to give the rover some instructions.\nPlease enter some commands:"
+
+instructions = gets.chomp.upcase
+rover_1.take_command(instructions)
 puts rover_1
 
-puts "Turn rover right:"
-
-rover_1.read_instruction("R")
-puts rover_1
-
-puts "Turn rover left:"
-
-rover_1.turn_left
-puts rover_1
-
-puts "Move the rover:"
-
-rover_1.move
-puts rover_1
-
-puts "---------------"
 
 
 
 
 
-instructions = gets.chomp
 
-instructions.each_char do |x|
-  puts x
-  rover_1.read_instruction(x)
-  puts rover_1
-end
+
+
+
+
+
+
+
+# puts "Turn rover right:"
+
+# rover_1.read_instruction("R")
+# puts rover_1
+
+# puts "Turn rover left:"
+
+# rover_1.turn_left
+# puts rover_1
+
+# puts "Move the rover:"
+
+# rover_1.move
+# puts rover_1
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
