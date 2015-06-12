@@ -37,7 +37,7 @@ class RegularItem
   end
 
   def tax
-    tax = (@price * 0.10)
+    tax = (@price * 0.10).to_f
   end
 end
 
@@ -47,6 +47,22 @@ puts perfume.tax
 # ImportedItem class has a tax amount of 15%
 # The class calculates the tax rate
 # Taks an item and price as arguments
+
+class ImportedItem
+  attr_accessor :item, :price
+
+  def initialize(item, price)
+    @item = item
+    @price = price
+  end
+
+  def tax
+    tax = (@price * 0.15).to_f
+  end
+end
+
+chocolate_bar = ImportedItem.new(chocolate_bar, 10)
+puts chocolate_bar.tax
 
 
 
